@@ -24,7 +24,7 @@ pipeline {
         stage('Docker Build'){
             steps{
                 echo 'Docker Image Building'
-                sh   ' docker build -t lakshmanarao18/batch:${BUILD_NUMBER} . '
+                sh   ' docker build -t lakshmanarao18/devops:${BUILD_NUMBER} . '
             }
         }
     }
