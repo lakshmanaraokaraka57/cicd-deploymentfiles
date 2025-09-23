@@ -27,5 +27,16 @@ pipeline {
                 sh   ' docker build -t lakshmanarao18/devops:${BUILD_NUMBER} . '
             }
         }
+        stage('Push to Dockerhub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
+                    sh ' docker login -u lakshmanarao18 -p ${dockerhub}'
+                    sh ' docker push lakshmanarao18/devops:${BUILD_NUMBER} '
+                    echo ' pushed to Dockerhub'    
+                    }
+                }
+            }
+        }
     }
 }
