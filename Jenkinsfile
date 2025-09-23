@@ -15,5 +15,11 @@ pipeline {
                 '''
             }
         }
+        stage('Build Artifact'){
+            steps{
+                echo 'Build Atrifact'
+                sh 'mvn clean package'
+            }
+        }
     }
 }
