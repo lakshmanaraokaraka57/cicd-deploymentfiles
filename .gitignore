@@ -1,0 +1,21 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+
+# Terraform hidden directories
+.terraform/
+
+# Override files
+terraform.tfvars
+*.tfvars
+
+# Plan output
+*.tfplan
+*.terraform.lock.hcl
+
+# IDE files (optional, for cleanliness)
+.vscode/
+.idea/
