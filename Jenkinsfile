@@ -21,5 +21,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        stage('Docker Build'){
+            steps{
+                echo 'Docker Image Building'
+                sh   ' docker build -t lakshmanarao18/batch:${BUILD_NUMBER} . '
+            }
+        }
     }
 }
