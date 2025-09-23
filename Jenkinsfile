@@ -24,7 +24,7 @@ pipeline {
         stage('Docker Build'){
             steps{
                 echo 'Docker Image Building'
-                sh   ' docker build -t lakshmanarao18/devops:${BUILD_NUMBER} . '
+                sh   ' docker build -t lakshmanarao18/devops: frontend ${BUILD_NUMBER} . '
             }
         }
         stage('Push to Dockerhub'){
@@ -32,7 +32,7 @@ pipeline {
                 script{
                     withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
                     sh ' docker login -u lakshmanarao18 -p ${dockerhub}'
-                    sh ' docker push lakshmanarao18/devops:${BUILD_NUMBER} '
+                    sh ' docker push lakshmanarao18/devops: frontend ${BUILD_NUMBER} '
                     echo ' pushed to Dockerhub'    
                     }
                 }
