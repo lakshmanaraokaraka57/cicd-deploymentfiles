@@ -38,5 +38,22 @@ pipeline {
                 }
             }
         }
+        stage('Update Deployment File'){
+            environment{
+                GIT_REPO_NAME = 'cicd-deploymentfiles'
+                GIT_USER_NAME = 'lakshmanaraokaraka57'
+            }
+            steps{
+                echo ' Update Deployment Manifest Files'
+                withCredentials([string(credentialsId: 'githubtoken', variable: 'githubtoken')]) {
+                    sh '''
+                    git config user.email "lasyakaraka@gmail.com"
+                    git config user.name "Lakshmanarao"
+                    BUILD_NUMBER=${BUILD_NUMBER}
+                    sed -i "s/devops-frontend:.*/devops-frontend:${BUILD_NUMBER}/g" deployment.yaml
+                    '''
+                }
+            }
+        }
     }
 }
