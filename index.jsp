@@ -34,7 +34,7 @@
         <div class="details">
             <p><strong>Name:</strong> Lakshmana Rao</p>
             <p><strong>Phone Number:</strong> +91-9494000000</p>
-            <p><strong>IT Experience:</strong> 3.5 years</p>
+            <p><strong>IT Experience:</strong> 3.7 years</p>
             <p><strong>Domain Knowledge:</strong> AWS, Terraform, Python Automation</p>
 			<p><strong>Trainer Name:</strong> Rajesh Naidu</p>
         </div>
